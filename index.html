@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- PAGE settings -->
+  <title>Thanking Ashfiya</title>
+  <meta name="description" content="Happy Birthday Ashfiya">
+  <meta name="keywords" content="Happy Birthday Ashfiya,KhanAsh456">
+  <!-- CSS dependencies -->
+  <link rel="stylesheet" type="text/css" href="aquamarine.css">
+  <style type="text/css">
+    @import url('https://fonts.googleapis.com/css?family=Roboto:200,300,400');
+    // Options
+    // 
+    // Quickly modify global styling by enabling or disabling optional features.
+    $enable-rounded: true !default;
+    $enable-shadows: true;
+    $enable-transitions: true;
+    $enable-hover-media-query: false;
+    $enable-grid-classes: true;
+    $enable-print-styles: true;
+    // Variables
+    //
+    // Colors
+    $theme-colors: (primary: #12bbad,
+    secondary: #4f70ce,
+    light: #f3f3f3,
+    dark: #151515,
+    info: #ccc,
+    success: #28a745,
+    warning: #ffc107,
+    danger: #dc3545);
+    $body-bg: white;
+    $body-color: #333;
+    $body-color-inverse: invert($body-color) !default;
+    $link-color: #12bbad;
+    // Fonts
+    $font-family-base: Roboto,
+    Lucida Console,
+    Monaco,
+    monospace;
+    $display-font-family: Roboto;
+    $lead-font-size: 1.30rem;
+    $font-size-base: 1rem;
+    $font-weight-light: 300;
+    $font-weight-normal: 200;
+    $font-weight-bold: 700;
+    $font-weight-base: $font-weight-normal;
+    $line-height-base: 1.5;
+    $headings-font-family: Roboto;
+    $headings-font-weight: $font-weight-normal;
+    $headings-line-height: 1.2;
+    $spacer: 1.5rem;
+    // Components
+    $border-width: 1px !default;
+    // Buttons
+    $input-btn-padding-y-lg: .55rem;
+    $input-btn-padding-x-lg: 1.2rem;
+    $input-btn-padding-x: 1rem !default;
+    // Cards
+    $card-border-width: 0px;
+    $card-bg: map-get($theme-colors, 'light');
+    // Breadcrumb
+    $breadcrumb-bg: transparent !default;
+    // Carousel
+    $carousel-caption-width: 100% !default;
+    $carousel-indicator-height: 6px !default;
+    @import 'bootstrap-4.1.3';
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body>* {
+      background-position: center;
+      background-size: cover;
+    }
+
+    // Color yiq
+    @each $name,
+    $value in $theme-colors {
+      .bg-#{$name} {
+        color: color-yiq($value);
+
+        input::placeholder {
+          color: transparentize(color-yiq($value), .2);
+        }
+
+        .input-group-text {
+          color: color-yiq($value);
+        }
+      }
+    }
+
+    .cover {
+      min-height: 100%;
+    }
+
+    .inset-shadowed {
+      box-shadow: inset 0px 0px 45px #555;
+    }
+
+    .shadowed {
+      box-shadow: 0px 0px 5px #555;
+    }
+
+    .section-aquamarine {
+      position: relative;
+      color: white;
+      background-size: cover;
+      background-position: center;
+
+      &:before {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        content: ' ';
+        background: linear-gradient(to bottom right, transparentize(theme-color("primary"), 0.1) 0%, transparentize(theme-color("secondary"), 0.1) 100%);
+      }
+    }
+
+    .section-dark {
+      position: relative;
+      color: map-get($theme-colors, 'light');
+      background-size: cover;
+      background-position: center;
+
+      &:before {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        content: ' ';
+        background: rgba(map-get($theme-colors, 'dark'), 0.75);
+      }
+    }
+
+    .section-light {
+      position: relative;
+      color: map-get($theme-colors, 'dark');
+      background-size: cover;
+      background-position: center;
+
+      &:before {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        content: ' ';
+        background: rgba(map-get($theme-colors, 'light'), 0.75);
+      }
+    }
+
+    .section-parallax {
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .bg-aquamarine {
+      background: linear-gradient(-30deg, transparentize(theme-color("secondary"), 0.1) 0%, transparentize(theme-color("primary"), 0.1) 50%, transparentize(theme-color("primary"), 0.05) 100%);
+      color: white;
+    }
+
+    .img-thumbnail {
+      border: 0px;
+      padding: 10px;
+    }
+
+    .carousel {
+      .carousel-caption {
+        padding-top: 50px;
+        padding-bottom: 20px;
+        bottom: 0px;
+        background: linear-gradient(transparent 10%, transparentize(theme-color("dark"), 0.05) 100%);
+      }
+
+      .carousel-control-next,
+      .carousel-control-prev {
+        opacity: 0.85;
+      }
+
+      .carousel-indicators {
+        bottom: 0px;
+      }
+    }
+
+    /* Animate state between .navbar and .navbar-ontop */
+    .navbar {
+      transition: background-color .5s ease-out;
+    }
+
+    .navbar-ontop {
+      background-color: transparent !important;
+    }
+
+    /* Animate on entrance */
+    .animate-in-down {
+      transition: all 1.3s ease-out;
+      position: relative;
+      opacity: 1;
+      top: 0px;
+
+      &.out-of-viewport {
+        top: 40px;
+        opacity: 0;
+      }
+    }
+
+    .animate-in-left {
+      transition: all 1.0s ease-out;
+      position: relative;
+      opacity: 1;
+      left: 0%;
+
+      &.out-of-viewport {
+        opacity: 0;
+        left: -5%;
+      }
+    }
+
+    .animate-in-right {
+      transition: all 1.0s ease-out;
+      position: relative;
+      opacity: 1;
+      left: 0%;
+
+      &.out-of-viewport {
+        opacity: 0;
+        left: 5%;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <!-- Script: Make my navbar transparent when the document is scrolled to top -->
+  <script>
+    (function() {
+      var className = "navbar-ontop"
+      // we start hidden, to avoid flickering
+      document.write("<style id='temp-navbar-ontop'>.navbar {opacity:0; transition: none !important}</style>")
+      document.addEventListener("DOMContentLoaded", function(event) {
+        $(window).on('show.bs.collapse', function(e) {
+          $(e.target).closest("." + className).removeClass(className);
+        })
+        $(window).on('hidden.bs.collapse', function(e) {
+          update()
+        })
+        // still hacking to avoid flickering
+        setTimeout(function() {
+          document.querySelector("#temp-navbar-ontop").remove()
+        })
+      });
+      window.addEventListener("scroll", function() {})
+    })();
+  </script>
+  <!-- Script: Animated entrance -->
+  <script>
+    (function() {
+      //Set up defaults
+      var duration = "1000";
+      var heightOffset = 100;
+      // document.write("<style id='temp-animate-in'>*[class^='animate-in'], *[class*=' animate-in'] {display:none}</style>")
+      function isElementVisible(elem) {
+        var rect = elem.getBoundingClientRect();
+        //Return true if any of the following conditions are met:
+        return (
+          // The top is in view: the top is more than 0 and less than the window height (the top of the element is in view)
+          ((rect.top + heightOffset) >= 0 && (rect.top + heightOffset) <= window.innerHeight) ||
+          // The bottom is in view: bottom position is greater than 0 and greater than the window height
+          ((rect.bottom + heightOffset) >= 0 && (rect.bottom + heightOffset) <= window.innerHeight) ||
+          // The top is above the viewport and the bottom is below the viewport
+          ((rect.top + heightOffset) < 0 && (rect.bottom + heightOffset) > window.innerHeight))
+      }
+
+      function update() {
+        var nodes = document.querySelectorAll("*:not(.animate-in-done)[class^='animate-in'], *:not(.animate-in-done)[class*=' animate-in']")
+        for (var i = 0; i < nodes.length; i++) {
+          if (isElementVisible(nodes[i])) {
+            nodes[i].classList.remove("out-of-viewport")
+            nodes[i].classList.add("animate-in-done")
+          } else {
+            nodes[i].classList.add("out-of-viewport")
+          }
+        }
+      }
+      document.addEventListener("DOMContentLoaded", function(event) {
+        update()
+        // setTimeout(function() {
+        //   document.querySelector("#temp-animate-in").remove()
+        // })
+      });
+      window.addEventListener("scroll", function() {
+        update()
+      })
+    })();
+  </script>
+</head>
+
+<body class="text-center">
+  <!-- Navbar -->
+  <!-- Cover -->
+  <div class="d-flex align-items-center section-aquamarine py-5 cover" style="background-image: url(&quot;assets/people/cover.jpg&quot;);">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-white mt-5">
+          <h1 class="display-2 d-none d-md-block" style="">Happy<br>Birthday<br>Ashfiya</h1>
+          <h1 class="display-4 d-block d-md-none">Happy<br>Birthday<br>Ashfiya</h1>
+          <p class="lead" style="">August 22-2020, Tamaskhori Gang</p>
+        </div>
+      </div>
+    </div>
+    <div class="container"></div>
+  </div>
+  <!-- Parallax section -->
+  <div class="py-5 section-parallax" style="background-image: url(&quot;assets/people/venue.jpg&quot;);">
+    <div class="container my-5 p-4 text-muted bg-dark">
+      <div class="row mx-auto">
+        <div class="col-md-12">
+          <h1 class="mb-3 text-primary" style="" contenteditable="true">The Gift From Tamaskhori Gang</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Speakers -->
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="text-center mx-auto col-lg-8 col-10">
+          <h1 class="mb-3">Memories</h1>
+          <div id="carousel1" class="carousel slide carousel-fade" data-ride="carousel" data-interval="5000">
+            <div class="carousel-inner">
+              <div class="carousel-item active"> <img class="d-block w-100" src="assets/gallery/IMG_20190228_104639.jpg" style=""> </div>
+              <div class="carousel-item"> <img class="d-block w-100" src="assets/gallery/IMG_20190820_111229.jpg"> </div>
+              <div class="carousel-item"> <img class="d-block w-100" src="assets/gallery/IMG_20190820_112034.jpg"> </div>
+            </div>
+            <ol class="carousel-indicators">
+              <li data-target="#carousel1" data-slide-to="0" class="active"> </li>
+              <li data-target="#carousel1" data-slide-to="1" class=""> </li>
+              <li data-target="#carousel1" data-slide-to="1" class=""> </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-4 bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 p-3"> <img class="img-fluid d-block" src="assets/gallery/IMG-20191229-WA0035.jpg"> </div>
+        <div class="p-3 col-md-4 col-6"> <img class="img-fluid d-block" src="assets/gallery/IMG-20191229-WA0027.jpg"> </div>
+        <div class="p-3 col-md-3 col-6"> <img class="img-fluid d-block" src="assets/gallery/IMG-20191229-WA0030.jpg"> </div>
+      </div>
+    </div>
+  </div>
+  <div class="pt-5 bg-dark" id="speakers" style="	background-image: linear-gradient(to bottom, #606161, rgba(66,66,66,6));	background-position: top left;	background-size: 100%;	background-repeat: repeat;">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Tamaskhori Gang</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 col-lg-4 animate-in-left">
+          <a href="#">
+            <img src="assets/people/Devyani.jpg" class="center-block img-fluid my-3 rounded-circle" width="300">
+          </a>
+        </div>
+        <div class="col-6 col-lg-4">
+          <a href="#">
+            <img src="assets/people/Smita.jpg" class="center-block img-fluid my-3 rounded-circle" width="300">
+          </a>
+        </div>
+        <div class="col-6 col-lg-4 animate-in-right">
+          <a href="#">
+            <img src="assets/people/Sharvari.jpg" class="center-block img-fluid my-3 rounded-circle" width="300">
+          </a>
+        </div>
+        <div class="col-6 col-lg-4 animate-in-left">
+          <a href="#">
+            <img src="assets/people/Nupur.jpg" class="center-block img-fluid my-3 rounded-circle" width="300">
+          </a>
+        </div>
+        <div class="col-6 col-lg-4">
+          <a href="#">
+            <img src="assets/people/Mayur.jpg" class="center-block img-fluid my-3 rounded-circle" width="300">
+          </a>
+        </div>
+        <div class="col-6 mask col-lg-4 animate-in-right">
+          <a href="#">
+            <img src="assets/people/Ashu.jpg" class="center-block img-fluid my-3 rounded-circle" width="300">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bg-secondary" id="speakers" style="">
+    <div class="container-fluid" style="	background-image: linear-gradient(to bottom, rgb(0, 0, 0), rgb(0, 0, 0));	background-position: top left;	background-size: 100%;	background-repeat: repeat;">
+      <div class="row" style="	background-image: linear-gradient(to bottom, rgba(66, 66, 66, 6), rgba(44, 44, 44, 4));	background-position: top left;	background-size: 100%;	background-repeat: repeat;">
+        <div class="col-6 col-lg-6 animate-in-left pb-5" style="	background-image: linear-gradient(to bottom, rgba(66, 66, 66, 6), rgba(44, 44, 44, 4));	background-position: top left;	background-size: 100%;	background-repeat: repeat;">
+          <a href="#">
+            <img src="assets/people/Yogesh.jpg" class="center-block img-fluid my-3 rounded-circle" width="300">
+          </a>
+        </div>
+        <div class="col-6 col-lg-6" style="	background-image: linear-gradient(to bottom, rgba(66, 66, 66, 6), rgba(44, 44, 44, 4));	background-position: top left;	background-size: 100%;	background-repeat: repeat;">
+          <a href="#">
+            <img src="assets/people/Aditya.jpg" class="center-block img-fluid my-3 rounded-circle" width="300">
+          </a>
+        </div>
+      </div>
+      <div class="row" style="	background-image: linear-gradient(to bottom, rgba(44, 44, 44, 4), rgba(0, 0, 0, 0.8));	background-position: top left;	background-size: 100%;	background-repeat: repeat;">
+        <div class="col-6 col-lg-12 animate-in-left pb-5" style="	background-image: linear-gradient(to bottom, rgba(44,44,44,4), rgba(0, 0, 0, 0.8));	background-position: top left;	background-size: 100%;	background-repeat: repeat;">
+          <a href="#">
+            <img src="assets/people/Mayuri.jpg" class="center-block img-fluid my-3 rounded-circle" width="300">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Schedule -->
+  <div class="py-5 section-parallax" style="background-image: url(&quot;assets/people/schedule.jpg&quot;);" id="schedule">
+    <div class="py-5 section-parallax" style="background-image: url(&quot;assets/people/schedule.jpg&quot;);" id="schedule"></div>
+    <!-- Sponsor logos -->
+    <!-- Call to action -->
+    <div class="py-5 section-aquamarine" id="register">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-md-left text-center">
+            <h4 class="" style="">May you achieve success beyond its bounds.<br>May this year, God shower you with all his blessings and love.<br>Your birthday is the first day of another 365-day journey✈️Be the shining thread always and make this year be your best ever.<br>&nbsp;Enjoy your day Ash</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="py-5 section bg-faded bg-light" style="">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h3 style="color:black;border:solid 1px orange ">Thank You So Much Ashfiya for making our life BEAUTIFUL..! </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <!-- JavaScript dependencies -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!-- Script: Smooth scrolling between anchors in the same page -->
+    <script>
+      (function() {
+        var duration = 500
+        $('a[href*="#"]')
+          // Remove links that don't actually link to anything
+          .not('[href="#"]').click(function(event) {
+            // On-page links
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+              // Figure out element to scroll to
+              var target = $(this.hash);
+              target = target.length ? target : $('[name=' + this.hash.slice(1) + ']')
+              // Does a scroll target exist?
+              if (target.length) {
+                // Only prevent default if animation is actually gonna happen
+                event.preventDefault()
+                $('html, body').animate({
+                  scrollTop: target.offset().top
+                }, duration, function() {
+                  // Callback after animation
+                  // Must change focus!
+                  var $target = $(target);
+                  $target.focus();
+                  if ($target.is(":focus")) { // Checking if the target was focused
+                    return false;
+                  } else {
+                    $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
+                    $target.focus(); // Set focus again
+                  };
+                });
+              }
+            }
+          });
+      })();
+    </script>
+  </div>
+
+</body>
+
+</html>
